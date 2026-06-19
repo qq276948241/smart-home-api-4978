@@ -1,6 +1,7 @@
 const Device = require('../models/Device');
 const Room = require('../models/Room');
 const Message = require('../models/Message');
+const DeviceEvent = require('../models/DeviceEvent');
 const Response = require('../utils/response');
 const { parseState, stringifyState, generateSerialNumber } = require('../utils/helpers');
 const { getWSManager } = require('../websocket/manager');
@@ -165,6 +166,20 @@ class DeviceController {
     updated.status = newState.power === 'on' ? 'active' : 'standby';
     Device.update(device.id, { status: updated.status, updated_at: new Date().toISOString() });
 
+    try {
+      if (action === 'power_on') {
+        DeviceEvent.logPowerOn(device.id, req.user.id, { ...params });
+      } else if (action === 'power_off') {
+        DeviceEvent.logPowerOff(device.id, req.user.id, { ...params });
+      } else if (action === 'toggle') {
+        if (newState.power === 'on') DeviceEvent.logPowerOn(device.id, req.user.id, { toggle: true });
+        else DeviceEvent.logPowerOff(device.id, req.user.id, { toggle: true });
+      }
+      DeviceEvent.logControl(device.id, req.user.id, action, params);
+    } catch (evErr) {
+      console.error('[Event] 记录事件失败:', evErr.message);
+    }
+
     const wsManager = getWSManager();
     wsManager.broadcastDeviceState(updated, req.user.id, 'control');
 
@@ -187,6 +202,16 @@ class DeviceController {
     const status = isOnline ? (parseState(device.state).power === 'on' ? 'active' : 'standby') : 'offline';
 
     const updated = Device.updateOnlineStatus(device.id, isOnline, status);
+
+    try {
+      if (isOnline) {
+        DeviceEvent.logOnline(device.id, req.user.id);
+      } else {
+        DeviceEvent.logOffline(device.id, req.user.id);
+      }
+    } catch (evErr) {
+      console.error('[Event] 记录在线事件失败:', evErr.message);
+    }
 
     const wsManager = getWSManager();
     wsManager.broadcastDeviceState(updated, req.user.id, 'online');
@@ -241,6 +266,20 @@ class DeviceController {
         const status = newState.power === 'on' ? 'active' : 'standby';
         const updated = Device.updateState(device.id, stringifyState(newState));
         Device.update(device.id, { status, updated_at: new Date().toISOString() });
+
+        try {
+          if (action === 'power_on') {
+            DeviceEvent.logPowerOn(device.id, req.user.id, { ...params, batch: true });
+          } else if (action === 'power_off') {
+            DeviceEvent.logPowerOff(device.id, req.user.id, { ...params, batch: true });
+          } else if (action === 'toggle') {
+            if (newState.power === 'on') DeviceEvent.logPowerOn(device.id, req.user.id, { toggle: true, batch: true });
+            else DeviceEvent.logPowerOff(device.id, req.user.id, { toggle: true, batch: true });
+          }
+          DeviceEvent.logControl(device.id, req.user.id, action, { ...params, batch: true });
+        } catch (evErr) {
+          console.error('[Event] 记录批量事件失败:', evErr.message);
+        }
 
         wsManager.broadcastDeviceState(updated, req.user.id, 'control');
         results.push({ id: deviceId, success: true, state: newState });

@@ -18,6 +18,22 @@
       "user_id": 1,
       "name": "??",
       "icon": null
+    },
+    {
+      "id": 2,
+      "created_at": "2026-06-19T08:21:17.501Z",
+      "updated_at": "2026-06-19T08:21:17.501Z",
+      "user_id": 1,
+      "name": "??",
+      "icon": null
+    },
+    {
+      "id": 3,
+      "created_at": "2026-06-19T08:21:17.527Z",
+      "updated_at": "2026-06-19T08:21:17.527Z",
+      "user_id": 1,
+      "name": "??",
+      "icon": null
     }
   ],
   "devices": [
@@ -50,6 +66,86 @@
       "serial_number": "SH-62A9C5256D474405",
       "status": "active",
       "state": "{\"power\":\"on\",\"mode\":\"cool\",\"temperature\":26}",
+      "firmware_version": "1.0.0",
+      "is_online": 0
+    },
+    {
+      "id": 3,
+      "created_at": "2026-06-19T08:21:17.656Z",
+      "updated_at": "2026-06-19T08:21:19.448Z",
+      "user_id": 1,
+      "room_id": 2,
+      "name": "????",
+      "type": "light",
+      "manufacturer": null,
+      "model": null,
+      "serial_number": "SH-3F04297110394AB7",
+      "status": "standby",
+      "state": "{\"power\":\"off\"}",
+      "firmware_version": "1.0.0",
+      "is_online": 0
+    },
+    {
+      "id": 4,
+      "created_at": "2026-06-19T08:21:17.677Z",
+      "updated_at": "2026-06-19T08:21:19.618Z",
+      "user_id": 1,
+      "room_id": 2,
+      "name": "????",
+      "type": "ac",
+      "manufacturer": null,
+      "model": null,
+      "serial_number": "SH-BE76B6D5B59C46DE",
+      "status": "active",
+      "state": "{\"power\":\"on\"}",
+      "firmware_version": "1.0.0",
+      "is_online": 0
+    },
+    {
+      "id": 5,
+      "created_at": "2026-06-19T08:21:17.696Z",
+      "updated_at": "2026-06-19T08:21:19.139Z",
+      "user_id": 1,
+      "room_id": 3,
+      "name": "?????",
+      "type": "light",
+      "manufacturer": null,
+      "model": null,
+      "serial_number": "SH-E12142035FE946B4",
+      "status": "standby",
+      "state": "{\"power\":\"off\"}",
+      "firmware_version": "1.0.0",
+      "is_online": 0
+    },
+    {
+      "id": 6,
+      "created_at": "2026-06-19T08:21:17.715Z",
+      "updated_at": "2026-06-19T08:21:18.997Z",
+      "user_id": 1,
+      "room_id": 3,
+      "name": "????",
+      "type": "tv",
+      "manufacturer": null,
+      "model": null,
+      "serial_number": "SH-C714E8A798CF4850",
+      "status": "standby",
+      "state": "{\"power\":\"off\"}",
+      "firmware_version": "1.0.0",
+      "is_online": 0
+    },
+    {
+      "id": 7,
+      "created_at": "2026-06-19T08:21:17.737Z",
+      "updated_at": "2026-06-19T08:21:19.828Z",
+      "user_id": 1,
+      "room_id": null,
+      "name": "????",
+      "type": "other",
+      "manufacturer": null,
+      "model": null,
+      "serial_number": "SH-6F5D45E431114A82",
+      "status": "standby",
+      "state": "{\"power\":\"off\"}",
       "firmware_version": "1.0.0",
       "is_online": 0
     }
@@ -133,23 +229,289 @@
       "content": "您已成功添加设备: ???? (ac)",
       "related_type": "device",
       "related_id": 2
+    },
+    {
+      "id": 3,
+      "created_at": "2026-06-19T08:21:17.656Z",
+      "updated_at": "2026-06-19T08:21:17.656Z",
+      "user_id": 1,
+      "type": "system",
+      "title": "新设备添加",
+      "content": "您已成功添加设备: ???? (light)",
+      "related_type": "device",
+      "related_id": 3
+    },
+    {
+      "id": 4,
+      "created_at": "2026-06-19T08:21:17.677Z",
+      "updated_at": "2026-06-19T08:21:17.677Z",
+      "user_id": 1,
+      "type": "system",
+      "title": "新设备添加",
+      "content": "您已成功添加设备: ???? (ac)",
+      "related_type": "device",
+      "related_id": 4
+    },
+    {
+      "id": 5,
+      "created_at": "2026-06-19T08:21:17.696Z",
+      "updated_at": "2026-06-19T08:21:17.696Z",
+      "user_id": 1,
+      "type": "system",
+      "title": "新设备添加",
+      "content": "您已成功添加设备: ????? (light)",
+      "related_type": "device",
+      "related_id": 5
+    },
+    {
+      "id": 6,
+      "created_at": "2026-06-19T08:21:17.715Z",
+      "updated_at": "2026-06-19T08:21:17.715Z",
+      "user_id": 1,
+      "type": "system",
+      "title": "新设备添加",
+      "content": "您已成功添加设备: ???? (tv)",
+      "related_type": "device",
+      "related_id": 6
+    },
+    {
+      "id": 7,
+      "created_at": "2026-06-19T08:21:17.737Z",
+      "updated_at": "2026-06-19T08:21:17.737Z",
+      "user_id": 1,
+      "type": "system",
+      "title": "新设备添加",
+      "content": "您已成功添加设备: ???? (other)",
+      "related_type": "device",
+      "related_id": 7
     }
   ],
   "firmware_versions": [],
   "device_firmware_history": [],
   "_sequences": {
     "users": 1,
-    "rooms": 1,
-    "devices": 2,
+    "rooms": 3,
+    "devices": 7,
     "scenes": 1,
     "scene_actions": 2,
     "schedules": 0,
-    "messages": 2,
+    "messages": 7,
     "firmware_versions": 0,
-    "device_firmware_history": 0
+    "device_firmware_history": 0,
+    "device_events": 26
   },
   "_meta": {
     "initialized": true,
     "version": "1.0.0"
-  }
+  },
+  "device_events": [
+    {
+      "id": 1,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:17.992Z"
+    },
+    {
+      "id": 2,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:17.992Z"
+    },
+    {
+      "id": 3,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.150Z"
+    },
+    {
+      "id": 4,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.150Z"
+    },
+    {
+      "id": 5,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.290Z"
+    },
+    {
+      "id": 6,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_off\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.290Z"
+    },
+    {
+      "id": 7,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.506Z"
+    },
+    {
+      "id": 8,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_off\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.506Z"
+    },
+    {
+      "id": 9,
+      "device_id": 5,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.719Z"
+    },
+    {
+      "id": 10,
+      "device_id": 5,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.719Z"
+    },
+    {
+      "id": 11,
+      "device_id": 6,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.861Z"
+    },
+    {
+      "id": 12,
+      "device_id": 6,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.861Z"
+    },
+    {
+      "id": 13,
+      "device_id": 6,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:18.997Z"
+    },
+    {
+      "id": 14,
+      "device_id": 6,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_off\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:18.997Z"
+    },
+    {
+      "id": 15,
+      "device_id": 5,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:19.139Z"
+    },
+    {
+      "id": 16,
+      "device_id": 5,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_off\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.139Z"
+    },
+    {
+      "id": 17,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{\"toggle\":true}",
+      "created_at": "2026-06-19T08:21:19.306Z"
+    },
+    {
+      "id": 18,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"toggle\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.306Z"
+    },
+    {
+      "id": 19,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{\"toggle\":true}",
+      "created_at": "2026-06-19T08:21:19.448Z"
+    },
+    {
+      "id": 20,
+      "device_id": 3,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"toggle\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.448Z"
+    },
+    {
+      "id": 21,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:19.618Z"
+    },
+    {
+      "id": 22,
+      "device_id": 4,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.618Z"
+    },
+    {
+      "id": 23,
+      "device_id": 7,
+      "user_id": 1,
+      "event_type": "power_on",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:19.668Z"
+    },
+    {
+      "id": 24,
+      "device_id": 7,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_on\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.668Z"
+    },
+    {
+      "id": 25,
+      "device_id": 7,
+      "user_id": 1,
+      "event_type": "power_off",
+      "event_data": "{}",
+      "created_at": "2026-06-19T08:21:19.828Z"
+    },
+    {
+      "id": 26,
+      "device_id": 7,
+      "user_id": 1,
+      "event_type": "control",
+      "event_data": "{\"action\":\"power_off\",\"params\":{}}",
+      "created_at": "2026-06-19T08:21:19.828Z"
+    }
+  ]
 }

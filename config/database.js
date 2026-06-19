@@ -18,7 +18,21 @@ const DEFAULT_DATA = {
   messages: [],
   firmware_versions: [],
   device_firmware_history: [],
-  _sequences: {}
+  device_events: [],
+  _sequences: {},
+  _power_config: {
+    light: 15,
+    switch: 10,
+    ac: 1200,
+    thermostat: 800,
+    camera: 15,
+    speaker: 30,
+    curtain: 20,
+    lock: 5,
+    tv: 100,
+    sensor: 3,
+    other: 50
+  }
 };
 
 let data = null;
@@ -83,9 +97,23 @@ function now() {
 
 loadData();
 
+function getPowerConfig() {
+  if (!data._power_config) {
+    data._power_config = JSON.parse(JSON.stringify(DEFAULT_DATA._power_config));
+  }
+  return data._power_config;
+}
+
+function getDevicePower(type) {
+  const config = getPowerConfig();
+  return config[type] || config.other || 50;
+}
+
 module.exports = {
   getData: () => data,
   saveData,
   nextId,
-  now
+  now,
+  getPowerConfig,
+  getDevicePower
 };

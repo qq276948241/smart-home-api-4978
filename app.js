@@ -18,6 +18,7 @@ const sceneRoutes = require('./routes/sceneRoutes');
 const scheduleRoutes = require('./routes/scheduleRoutes');
 const messageRoutes = require('./routes/messageRoutes');
 const firmwareRoutes = require('./routes/firmwareRoutes');
+const energyRoutes = require('./routes/energyRoutes');
 
 const app = express();
 const PORT = parseInt(process.env.PORT) || 3000;
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.json({
     name: '智能家居设备控制接口服务',
-    version: '1.0.0',
+    version: '1.1.0',
     status: 'running',
     docs: {
       user: {
@@ -51,6 +52,12 @@ app.get('/', (req, res) => {
       },
       scene: {
         execute: 'POST /api/scenes/:id/execute',
+      },
+      energy: {
+        room_stats: 'GET /api/energy/rooms?period=day&sort_by=energy&order=desc',
+        overview: 'GET /api/energy/overview',
+        device_stats: 'GET /api/energy/devices/:device_id',
+        power_config: 'GET /api/energy/power-config',
       },
       websocket: {
         url: `ws://localhost:${PORT}?token=YOUR_JWT_TOKEN`,
@@ -74,6 +81,7 @@ app.use('/api/scenes', sceneRoutes);
 app.use('/api/schedules', scheduleRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/firmware', firmwareRoutes);
+app.use('/api/energy', energyRoutes);
 
 app.use('/health', (req, res) => {
   res.json({ status: 'ok', uptime: process.uptime() });
